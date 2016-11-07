@@ -1,0 +1,97 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "test package",
+  "main": "test.js",
+  "scripts": {
+    "test": "mocha test/index.js",
+    "clean": "rm -rf dist && rm -rf deploy/public && mkdir -p dist",
+    "test-jscs": "mocha -u tdd --reporter spec test/mocha/jscs.spec.js"
+  },
+  "author": "the",
+  "license": "ISC",
+  "dependencies": {
+    "jscs": "^3.0.7",
+    "node-persist": "0.0.6",
+    "yargs": "^6.0.0"
+  },
+  "jscsConfig": {
+    "preset": "google",
+    "validateIndentation": {
+      "value": "\t",
+      "includeEmptyLines": false,
+      "allExcept": [
+        "comments",
+        "emptyLines"
+      ]
+    },
+    "requireSpaceBeforeBlockStatements": false,
+    "validateQuoteMarks": false,
+    "requireSpaceAfterKeywords": false,
+    "jsDoc": {
+      "checkAnnotations": {
+        "preset": "jsdoc3",
+        "extra": {
+          "memberOf": "some",
+          "factory": true,
+          "construct": true
+        }
+      },
+      "checkParamExistence": true,
+      "checkParamNames": true,
+      "requireParamTypes": true,
+      "checkRedundantParams": true,
+      "checkReturnTypes": true,
+      "checkRedundantReturns": true,
+      "requireReturnTypes": true,
+      "checkTypes": "strictNativeCase",
+      "enforceExistence": false,
+      "requireNewlineAfterDescription": true,
+      "requireParamDescription": true,
+      "requireReturnDescription": true
+    },
+    "disallowTrailingWhitespace": true,
+    "requireSpacesInFunctionExpression": false,
+    "disallowMultipleLineBreaks": false,
+    "requireCamelCaseOrUpperCaseIdentifiers": true,
+    "maximumLineLength": false,
+    "requireSpaceBeforeObjectValues": false,
+    "disallowMultipleVarDecl": false,
+    "disallowMixedSpacesAndTabs": false,
+    "requireOperatorBeforeLineBreak": false,
+    "requireCurlyBraces": [
+      "for",
+      "while",
+      "do",
+      "try",
+      "catch"
+    ],
+    "disallowSpacesInsideObjectBrackets": false,
+    "requireSpaceBeforeBinaryOperators": false,
+    "requireSpaceAfterBinaryOperators": false,
+    "disallowSpaceAfterObjectKeys": false,
+    "disallowSpacesInsideParentheses": false,
+    "requireCapitalizedConstructors": true,
+    "disallowSpaceAfterPrefixUnaryOperators": true,
+    "requireSpacesInConditionalExpression": true,
+    "validateParameterSeparator": ", ",
+    "disallowSpacesInsideArrayBrackets": false,
+    "disallowSpacesInFunctionExpression": {
+      "beforeOpeningRoundBrace": true,
+      "beforeOpeningCurlyBrace": true
+    },
+    "disallowSpacesInAnonymousFunctionExpression": {
+      "beforeOpeningRoundBrace": true,
+      "beforeOpeningCurlyBrace": true
+    },
+    "disallowMultipleLineStrings": false,
+    "disallowKeywordsOnNewLine": [
+      "else"
+    ],
+    "requireDotNotation": false
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2",
+    "mocha-jscs": "^5.0.1"
+  }
+}
